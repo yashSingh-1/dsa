@@ -16,6 +16,7 @@ public class natural {
         System.out.println("Here is the sum :" + (sum));
         sc.close();
         demo.pattern();
+        demo.patternRight();
     }
 
     public int findSum(int n) {
@@ -25,6 +26,15 @@ public class natural {
     public void pattern() {
         for (int i = 1; i<=5; i++){
             for(int j = 5; j >= i; j-- ) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
+    public void patternRight() {
+        for (int i = 1; i <= 5; i++ ) {
+            for(int j = 5; j >= i; j-- ){
                 System.out.print("*");
             }
             System.out.println("");
