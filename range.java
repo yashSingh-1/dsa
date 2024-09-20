@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class range {
     public static void main(String[] args) {
         range something = new range();
@@ -16,8 +18,8 @@ public class range {
             {99, 6},
             {88, 76, 45, 8777, 5237}
         };
-        int rez = something.serachIn2DArr(array2D, 52345);
-        System.out.println(rez);
+        int[] rez = something.serachIn2DArr(array2D, 8777);
+        System.out.println(Arrays.toString(rez));
 
         
     }
@@ -50,14 +52,15 @@ public class range {
 
     }
 
-    int serachIn2DArr(int[][] arr, int target){
+    int[] serachIn2DArr(int[][] arr, int target){
         for(int i = 0; i< arr.length; i++){
-            for(int j = 0; j < arr[i].length; j++){
-                if(arr[i][j] == target){
-                    return arr[i][j];
+            for(int col = 0; col < arr[i].length; col++){
+                if(arr[i][col] == target){
+                    System.out.println("I: " + i + " j: " + col);
+                    return new int[]{i, col};
                 }
             }
         }
-        return -1;
+        return new int[]{-1, -1};
     }
 }
