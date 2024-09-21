@@ -11,12 +11,14 @@ public class binary {
             for (int i = arr.length / 2 ; i < arr.length; i++) {
                 if(arr[i] == target){
                     System.out.println("The index of " + target + " is : " + i);
+                    break;
                 }
             }
         }else{
             for (int i = 0; i < arr.length / 2; i++) {
                 if(arr[i] == target){
                     System.out.println("The index of " + target + " is : " + i);
+                    break;
                 }
             }
         }
