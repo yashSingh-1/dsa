@@ -8,7 +8,7 @@ public class orderAgnosticBinary {
 
         int start = 0;
         int end = arr.length -1 ;
-        int traget = 11;
+        int traget = 115;
 
 
         if(arr[start] > arr[end]){
