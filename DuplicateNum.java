@@ -4,11 +4,11 @@ public class DuplicateNum {
     public static void main(String[] args) {
         DuplicateNum num = new DuplicateNum();
 
-        int[] arr = {4,3,3,2,1};
+        int[] arr = {4,3,2,1, 4};
         num.cyclic(arr);
         System.out.println(Arrays.toString(arr));
 
-        num.bruteForce(arr);
+        // num.bruteForce(arr);
         
     }
 
@@ -16,13 +16,15 @@ public class DuplicateNum {
         int i = 0;
         while (i < arr.length) {
             int correct = arr[i] - 1;
-            if (arr[i] != arr[correct]) {
-                int temp = arr[correct];
-                arr[correct] = arr[i];
-                arr[i] = temp;
-            }else if(arr[i] == arr[correct]){
-                System.out.println("There is a duplicate of " + arr[i]);
-                break;
+            if(arr[i] != i + 1){
+                if (arr[i] != arr[correct]) {
+                    int temp = arr[correct];
+                    arr[correct] = arr[i];
+                    arr[i] = temp;
+                }else{
+                    System.out.println("Duplicate : " + i);
+                    break;
+                }
             }else{
                 i++;
             }
