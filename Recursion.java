@@ -1,8 +1,12 @@
 public class Recursion {
     public static void main(String[] args) {
-        int[] arr = {1, 3, 5, 66, 77, 88};
-        int found = binary(arr, 77, 0, arr.length - 1);
-        System.out.println(found);
+        // int[] arr = {1, 3, 5, 66, 77, 88};
+        // int found = binary(arr, 77, 0, arr.length - 1);
+        // System.out.println(found);
+        // printCount(10 );
+        int fact = product(5);
+        System.out.println(fact);
+        // factorial(5);
         
     }
 
@@ -26,4 +30,31 @@ public class Recursion {
         return binary(arr, target, mid + 1, e);
         
     }
+
+    static void printCount(int n){
+        if(n < 1){
+            return;
+        }
+        System.out.println(n);
+        printCount(n - 1);
+        System.out.println(n);
+    }
+
+    static int product(int n){
+        if(n < 1){
+            return 1;
+        }
+
+        int fact = n * product(n - 1);
+
+        return fact;
+    } 
+
+    static void factorial(int n){
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        System.out.println(fact);
+    } 
 }
