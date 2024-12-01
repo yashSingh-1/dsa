@@ -8,6 +8,10 @@ public class Recursion {
 
     static int binary(int[] arr, int target, int s, int e){
 
+        if(s > e){
+            return -1;
+        }
+
         int mid = s + (e - s)/ 2;
 
         if(target == arr[mid]){
@@ -18,10 +22,8 @@ public class Recursion {
             return binary(arr, target, s, mid - 1);
         }
 
-        if(target > arr[mid]){
-            return binary(arr, target, mid + 1, e);
-        }
 
-        return -1;
+        return binary(arr, target, mid + 1, e);
+        
     }
 }
