@@ -5,10 +5,10 @@ public class Recursion2 {
         // int num = productOfDigits(555);
         // System.out.println(num);
         // reverse(592124);
-        int rev = reversing(151);
-        System.out.println("Reverse : " + rev);
+        // int rev = reversing(151);
+        // System.out.println("Reverse : " + rev);
         
-        boolean isIt = palindrome(151);
+        boolean isIt = palindrome(1514);
         System.out.println(isIt);
     }
 
@@ -78,12 +78,12 @@ public class Recursion2 {
             return true ;
         }
 
+        int temp = n;
+
         boolean isIt = false;
         int reversed = reversing(n);
-        if(n == reversed){
+        if(temp == reversed){
             isIt = true;
-            System.out.println(isIt);
-
         }
         // System.out.println(reversed);
         return isIt;
