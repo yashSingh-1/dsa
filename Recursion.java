@@ -4,9 +4,11 @@ public class Recursion {
         // int found = binary(arr, 77, 0, arr.length - 1);
         // System.out.println(found);
         // printCount(10 );
-        int fact = product(5);
-        System.out.println(fact);
+        // int fact = product(5);
+        // System.out.println(fact);
         // factorial(5);
+        int sum = summation(5);
+        System.out.println(sum);
         
     }
 
@@ -57,4 +59,17 @@ public class Recursion {
         }
         System.out.println(fact);
     } 
+
+    static int summation(int n){
+        if( n < 1 ){
+            return 0;
+        }
+
+        if( n == 1){
+            return 1;
+        }
+
+        int sum = n + summation(n - 1);
+        return sum;
+    }
 }
