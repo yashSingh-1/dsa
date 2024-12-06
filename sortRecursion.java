@@ -2,7 +2,9 @@ public class sortRecursion {
     public static void main(String[] args) {
         
         // removeChar("nigga", "");
-        String some = removeChar3("niggasinParis");
+        // String some = removeChar3("niggasinParis");
+        // System.out.println(some);
+        String some = SkipString("afgdapplelo");
         System.out.println(some);
     }
 
@@ -54,4 +56,16 @@ public class sortRecursion {
             return ch + removeChar3(word.substring(1));
         }
     } 
+
+    static String SkipString(String word){
+        if(word.isEmpty()){
+            return "";
+        }
+
+        if(word.startsWith("apple") || word.endsWith("apple")){
+            return SkipString(word.substring(5));
+        }else{
+            return word.charAt(0) + SkipString(word.substring(1));
+        }
+    }
 }
