@@ -1,6 +1,8 @@
 public class subset {
     public static void main(String[] args) {
         subseq("", "sambhog");
+        double a = Math.pow(4, 2);
+        System.out.println(a);
     }
 
     static void subseq(String p, String up){
