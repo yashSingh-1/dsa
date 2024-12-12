@@ -18,6 +18,8 @@ public class LeetCode {
             }
         }
         System.out.println(list);
-        return list;
-     }
+        return list; 
+        
+    }
 }
+// damn this is stupid
