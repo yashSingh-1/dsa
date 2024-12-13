@@ -72,4 +72,20 @@ public class Recursion {
         int sum = n + summation(n - 1);
         return sum;
     }
+
+    static int recursiveSearch(int[] nums, int t, int s, int e){
+        if(s > e){
+            return -1;
+        }
+        int mid = s + (e - s) / 2;
+
+        if(nums[mid] == t){
+            return mid;
+        }
+        if(t > nums[mid]){
+            return recursiveSearch(nums, t, mid + 1, e);
+        }
+        return recursiveSearch(nums, t, s, mid - 1);
+
+    }
 }
