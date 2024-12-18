@@ -56,27 +56,78 @@ public class LinkedList {
         size++;
     }
 
-    // public void insertFirst(int val) {
-    //     Node node = new Node(val);
-    //     node.next = head;
-    //     head = node;
+    public void deleteFirst(){
 
-    //     if (tail == null) {
-    //         tail = head;
-    //     }
-    //     size += 1;
-    // }
+        if(size == 0){
+            System.out.println("Nothing to delete!");
+        }
 
-    // public void insertLast(int val) {
-    //     if (tail == null) {
-    //         insertFirst(val);
-    //         return;
-    //     }
-    //     Node node = new Node(val);
-    //     tail.next = node;
-    //     tail = node;
-    //     size++;
-    // }
+        Node temp = head;
+        int val = temp.value;
+        temp = temp.next;
+        head = temp;
+
+        size -= 1;
+        System.out.println("Deleted value: " + val + " size now: " + size);
+    }
+
+    public void deleteLast(){
+        if(size == 0){
+            System.out.println("Nothing to delete!");
+        }
+
+        if(size == 1){
+            deleteFirst();
+            return;
+        }
+
+        Node temp = head;
+        
+        for (int i = 0; i < size - 2; i++) {
+            temp = temp.next;
+        }
+
+        tail = temp;
+        tail.next = null;
+        size--;
+        System.out.println("Last element now: " + temp.value);
+
+    }
+
+    public Node getElement(int poistion){
+        if(poistion == 0){
+            return head;
+        }
+
+        if (poistion == size - 1) {
+            return tail;
+        }
+
+        Node temp = head;
+        for(int i = 0; i < poistion; i++){
+            temp = temp.next;
+        }
+
+        return temp;
+    }
+
+    public void deleteElementAtPos(int pos){
+        if(pos == 0){
+            deleteFirst();
+        }
+
+        if(pos == size - 1){
+            deleteLast();
+        }
+
+        Node prev = getElement(pos - 1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+
+
+        System.out.println("Value deleted: " + val);
+
+    }
 
     public void displayLL(){
         Node temp = head;
@@ -84,7 +135,7 @@ public class LinkedList {
             System.out.print(temp.value + " -> ");
             temp = temp.next;
         }
-
+        System.out.println();
     }
 
     private class Node {
