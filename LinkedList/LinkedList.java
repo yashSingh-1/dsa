@@ -138,6 +138,18 @@ public class LinkedList {
         System.out.println();
     }
 
+    public Node find(int value){
+        Node temp = head;
+        for (int i = 0; i < size - 1; i++) {
+            if(value == temp.value){
+                return temp;
+            }
+            temp = temp.next;
+        }
+        System.out.println("Node not found!");
+        return null ;
+    }
+
     private class Node {
         private int value;
         private Node next;
