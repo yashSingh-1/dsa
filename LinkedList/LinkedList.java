@@ -23,6 +23,61 @@ public class LinkedList {
         size += 1;
     }
 
+    public void insertLast(int val){
+        if(tail == null){
+            insertFirst(val);
+            return; 
+        }
+        Node box = new Node(val);
+        tail.next = box;
+        tail = box;
+
+        size += 1;
+    }
+
+    public void insertAtPosition(int val, int position){
+        if(position == 0){
+            insertFirst(val);
+            return;
+        }
+        if(position == size){
+            insertLast(val);
+            return;
+        }
+
+        Node temp = head;
+        for (int i = 1; i < position; i++) {
+            temp = temp.next;
+        }
+
+        Node node = new Node(val, temp.next);
+        temp.next = node;
+
+        size++;
+    }
+
+    // public void insertFirst(int val) {
+    //     Node node = new Node(val);
+    //     node.next = head;
+    //     head = node;
+
+    //     if (tail == null) {
+    //         tail = head;
+    //     }
+    //     size += 1;
+    // }
+
+    // public void insertLast(int val) {
+    //     if (tail == null) {
+    //         insertFirst(val);
+    //         return;
+    //     }
+    //     Node node = new Node(val);
+    //     tail.next = node;
+    //     tail = node;
+    //     size++;
+    // }
+
     public void displayLL(){
         Node temp = head;
         while(temp != null){
