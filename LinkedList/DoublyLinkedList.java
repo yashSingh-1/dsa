@@ -62,23 +62,6 @@ public class DoublyLinkedList {
         return temp;
     }
 
-    // public void addLast(int val){
-    //     if(tail == null){
-    //         addFirst(val);
-    //         return; 
-    //     }
-    //     System.out.println("Size: " + size);
-    //     Nodes prev = get(size-1);
-    //     System.out.println("Here is the prev val : " + prev.val);
-    //     Nodes node = new Nodes(val);
-    //     node.next = null;
-    //     node.prev = prev;
-    //     tail = node;
-         
-
-    //     size++;
-    // }
-
     public void addLastUsingTail(int val){
         Nodes temp = tail;
         Nodes node = new Nodes(val);
@@ -115,5 +98,33 @@ public class DoublyLinkedList {
             temp = temp.prev;
         }
         System.out.println();
+    }
+
+    public void insertAtPositionGiven(int val, int pos){
+        if(pos == 0){
+            addFirst(val);
+            return;
+        }
+
+        if(pos == size - 1){
+            addLastUsingTail(val);
+            return;
+        }
+
+        // Nodes currentAtPos = get(pos);
+        Nodes temp = head;
+        for(int i = 0; i < pos; i++){
+            temp = temp.next;
+            System.out.println("value : " + temp.val);
+        }
+        
+        Nodes newNode = new Nodes(val);
+        temp.prev = newNode;
+        newNode.next = temp.next.next;
+        newNode.prev = temp.prev.prev;
+        
+        // if(temp.next != null){
+        //     temp.next = temp.next.next;
+        // }
     }
 }

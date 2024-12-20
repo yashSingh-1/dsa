@@ -19,13 +19,14 @@ public class LL {
         DoublyLinkedList ll2 = new DoublyLinkedList();
         ll2.addFirst(987);
         ll2.addFirst(487);
-        ll2.display();
         // ll2.addLast(69);
-        // ll2.addLastUsingTail(69);
-        // ll2.addLastUsingTail(112);
-        // ll2.addLastUsingTail(278);
+        ll2.addLastUsingTail(69);
+        ll2.addLastUsingTail(112);
+        ll2.addLastUsingTail(278);
         ll2.addLastWithoutUsingTail(420);
         ll2.addLastWithoutUsingTail(420);
+        ll2.display();
+        ll2.insertAtPositionGiven(133, 1);
         // System.out.println(ll2.get(1));
         ll2.display();
         // ll2.revereDisplay();
