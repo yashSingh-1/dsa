@@ -25,9 +25,16 @@ public class rotatedPivot {
 
         while(s < e){
             int mid = s + (e - s) / 2;
-            if(arr[mid] > arr[mid + 1]){
-                e = mid;
-            }else {
+            if(mid < e && arr[mid] > arr[mid + 1]){
+                return mid;
+            }
+            if(mid > s && arr[mid] < arr[mid - 1]) {
+                return mid - 1;
+            }
+
+            if(arr[mid] < arr[s]){
+                e = mid - 1;
+            }else{
                 s = mid + 1;
             }
         }
