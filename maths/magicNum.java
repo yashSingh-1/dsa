@@ -9,7 +9,7 @@ public class magicNum {
 
         while(n > 0){
             int last = n & 1;
-            n = n >> 1;
+            n = n >> 1; // right shsift by 1
             ans += last * base;
             base = base * 5; 
         }
