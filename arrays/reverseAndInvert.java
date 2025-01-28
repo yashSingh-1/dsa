@@ -11,10 +11,10 @@ public class reverseAndInvert {
 
     static void reverse(int[][] arr){
         int s = 0;
-        int e = arr.length - 1;
+        int e = arr[s].length - 1;
 
         while(s <= e){
-            // int temp = arr[s];
+            int temp = arr[s];
             arr[s] = arr[e];
             // arr[e] = temp;
 

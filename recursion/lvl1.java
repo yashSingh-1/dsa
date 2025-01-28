@@ -1,17 +1,16 @@
 package recursion;
 
-public class easy {
+public class lvl1 {
     public static void main(String[] args) {
-        int n = 9;
-
-        printing(n);
+        printTillN(5);
     }
 
-    static void printing(int n) {
+    static void printTillN(int n){
         if(n == 0){
             return;
         }
-        printing(n - 1);
+
+        printTillN(n - 1);
         System.out.println(n);
     }
 }
